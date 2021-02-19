@@ -1,0 +1,202 @@
+html {
+	font-size: 62.5%; /* Para que 1rem = 10px (10 px = 62.5% de 16px)*/
+	color: white;
+	font-family: "Times New Roman", Times, serif;
+	background-color: #121212;
+}
+.hidden {
+	display: none; /*Não visível ao usuário*/
+}
+.clickable {
+	cursor: pointer;
+	/* Impede que o texto seja selecionado quando clicado*/
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.clickable:hover {
+	color: #FF0000;
+}
+table, thead, tbody, tr {
+	display: block;
+	width: 100%;
+	/*Usando display block podemos manipular
+	melhor a largura e altura de cada elemento da tabela.
+	Por padrão esses elementos irão ocupar toda
+	a largura do elemento pai (container). */
+}
+td {
+	display: inline-block;
+	/*td não pode ser block pois todos os tds devem estar
+	em uma mesma linha. Entretanto precisamos manipular a sua
+	largura, portanto usaremos inline-block, e dependendo
+	da quantidade de tds em uma tr, atribuiremos porcentagens */
+}
+tbody {
+	overflow-y: scroll;
+	/*Todas as tabelas terão a possibilidade de scroll*/
+}
+tbody::-webkit-scrollbar {
+	display: none;
+	/* Apesar de podermos scrollar pelas tabelas, não deixaremos
+	a barra de scroll visível para manter o layout mais limpo o possível.*/
+}
+label {
+	margin-left: 1rem;
+	/*1 rem = 10px*/
+}
+.header {
+	display: flex;
+	flex-direction: row;
+	background-color: #181818;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 7.2rem; /*7.2rem = 72px*/
+	font-size: 3.2rem; /*3.2rem = 32px e essa lógica se aplica a todos os rem.*/
+}
+.header img {
+	width: auto;
+	height: 6.4rem;
+	margin: auto auto;
+}
+.header img:hover {
+	filter: hue-rotate(330deg)saturate(15);
+}
+.header a {
+	padding: .5rem;
+	padding-top: 0;
+	margin: 0 auto;
+	line-height: 7.2rem;
+}
+.header > *:hover {
+	background-color: #121212;
+}
+.content {
+	position: fixed;
+	top: 7.2rem;
+	left: 0;
+	width: 90vw;
+	height: calc(96vh - 9.8rem);
+	margin: 2vh 5vw;
+	text-align: justify;
+}
+.product-container {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-rows: auto 3.2fr;
+	grid-template-columns: 1fr 6fr;
+	gap: 2.4rem;
+	font-size: 1.6rem;
+}
+#filter-bar {
+	grid-row: 1;
+	grid-column: 1;
+	background-color: #181818;
+	padding: 1rem;
+}
+#filter-bar input {
+	margin-bottom: 1rem;
+}
+#product-table {
+	grid-row: 1/span 2;
+	grid-column: 2;
+	background-color: #181818;
+	padding: 1rem;
+}
+#product-table table, tbody {
+	height: 100%;
+}
+#product-table td {
+	width: calc((100% - 9.6rem)/4);
+	text-align: center;
+}
+#product-table td:nth-child(1) {
+	width: 9.6rem;
+}
+#product-table td:nth-child(2) {
+	text-align: left;
+}
+.table-image {
+	height: 6.4rem;
+	width: auto;
+}
+#warning-no-categories {
+	font-size: 3.6rem;
+	text-align: justify;
+	color: #FF0000;
+}
+.about-container h1 {
+	font-size: 5.6em;
+	font-style: italic;
+	text-align: left;
+	margin-bottom: 2rem;
+}
+.about-container p {
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
+}
+.order-container {
+	width: 100%;
+	height: 100%;
+	background-color: #242424;
+	font-size: 1.6rem;
+	display: flex;
+	flex-direction: row;
+}
+.order-container div {
+	border: 1px solid #000000;
+	padding: 2rem;
+	flex: 1 1 60rem;
+}
+#order-table {
+	margin-top: 1rem;
+	text-align: center;
+}
+#order-table tbody {
+	height: 45rem;
+}
+#order-table td {
+	width: 33.33%;
+}
+#final-row-order-list {
+	margin-top: 1rem;
+	height: 1rem;
+}
+.order-container p {
+	margin-bottom: 2rem;
+}
+.order-container input {
+	width: 100%;
+	margin-bottom: 1rem;
+}
+.order-container button {
+	padding: .5rem;
+	font-size: 1.5rem;
+}
+.copyright-footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2rem;
+	border-top: solid 1px white;
+	padding: .5rem 0;
+}
+
+@media (max-width: 700px) {
+	html {
+		font-size: 50%;
+	}
+	#product-table {
+		height: 66%;
+	}
+	.product-container {
+		display: flex;
+		flex-direction: column;
+	}
+}

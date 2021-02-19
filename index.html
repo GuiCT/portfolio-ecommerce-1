@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='pt_br'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='resources/css/reset.css'>
+    <link rel='stylesheet' href='resources/css/style.css'>
+    <title>Loja Oficial do Guilherme</title>
+</head>
+
+<body>
+    <header class='header'>
+        <a id="show_products" class='clickable' onclick="selectContent('#products');">
+            Shop
+        </a>
+        <a id='show_about' class='clickable' onclick="selectContent('#about');">
+            Sobre
+        </a>
+        <img src='./resources/images/shoppingcart.png' class='clickable'
+        alt='Carrinho' id='show_carrinho'
+        onclick="selectContent('#carrinho');">
+    </header>
+
+    <section id='products' class='content'>
+        <div class='product-container'>
+            <div id='filter-bar'>
+                <input type='text' label='filterbyname' id='textfilter-name' placeholder='Nome'>
+                <br>
+                <input type='checkbox' label='smps' id='checkbox-smartphones' checked='true'>
+                <label for='smps'>Smartphones</label>
+                <br>
+                <input type='checkbox' label='books' id='checkbox-books' checked='true'>
+                <label for='books'>Livros</label>
+                <br>
+                <input type='checkbox' label='movies' id='checkbox-movies' checked='true'>
+                <label for='movies'>Filmes</label>
+            </div>
+    
+            <div id='product-table'>
+                <table>
+                    <thead>
+                    </thead>
+                    <tbody>
+                        <!--Conteúdo a ser inserido com javascript-->
+                    </tbody>
+                </table>
+
+                <div id='warning-no-categories' style='display:none; padding: 5px;'>
+                    <p>
+                        Nenhuma categoria foi selecionada. Selecione uma categoria no menu à esquerda para ter acesso aos produtos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id='about' class='content hidden'>
+        <div class='about-container'>
+            <h1>Sobre</h1>
+
+            <p>
+                Esse é o trabalho final da disciplina de <b>Desenvolvimento Web com JavaScript</b>.
+                Consiste numa página que imita lojas de e-Commerce, onde podemos adicionar produtos à um carrinho apenas clicando no produto desejado.
+            </p>
+            <p>
+                A aba Shop permite que todos os produtos (fictícios) sejam visualizados, e então, adicionados à um carrinho, que pode ser acessado clicando no carrinho de supermercados na parte direita do header.
+            </p>
+            <p>
+                Será exibido um resumo da "efetuada", onde devem ser inseridos detalhes do "cliente" e então realizada a compra.
+            </p>
+            <p>
+                Após efetuar a "compra", uma página de confirmação do pedido deve aparecer com um tempo estimado de frete, que se trata de um número aleatório entre 3 e 8 dias.
+            </p>
+        </div>
+    </section>
+
+    <section id='carrinho' class='content hidden'>
+        <div class='order-container'>
+            <div>
+                Os seguintes produtos serão comprados:
+
+                <table id='order-table'>
+                    <thead>
+                    </thead>
+                    <tbody>
+                        <!---Inserir produtos comprados utilizando JS-->
+                        <tr id='final-row-order-list'>
+                            <td>Preço Total: </td>
+                            <td id='total-price'>R$0,00</td>
+                            <td id='remove-all-orders'><a class='clickable' onclick='removeAllFromOrder();'>Remover tudo do carrinho</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <p>Por favor, insira seus dados abaixo:</p>
+
+                <!--O atributo
+                    onkeypress="return /[a-z+' ']/i.test(event.key);"
+                    impossibilita a entrada de caracteres que não sejam letras ou a barra de espaço.-->
+                <input type="text" id="username" name="username" onkeypress="return /[a-z+' ']/i.test(event.key);" placeholder="Nome"><br>
+                <input type="text" id="city" name="city" onkeypress="return /[a-z+' ']/i.test(event.key);" placeholder="Cidade"><br>
+                <input type="text" id="district" name="district" onkeypress="return /[a-z+' ']/i.test(event.key);" placeholder="Bairro"><br>
+                <input type="text" id="road" name="road" onkeypress="return /[a-z+' ']/i.test(event.key);" placeholder="Rua"><br>
+                <input type="number" id="number" name="number" placeholder="Número"><br>
+                <button id='confirm-order'>Botão para Enviar os dados</button> <!--Usa js para enviar os dados para a próxima página-->
+            </div>
+        </div>
+    </section>
+
+    <footer class='copyright-footer'>
+        Copyright © 2020 Guilherme Tomiasi. All Rights reserved.
+    </footer>
+
+    <script src='./resources/js/jquery-3.5.1.min.js'></script> <!--Utilizando jQuery-->
+    <script src='./resources/data/import-products.js'></script>
+    <script src='./resources/js/script-index.js'></script>
+</body>
+</html>

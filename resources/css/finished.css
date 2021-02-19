@@ -1,0 +1,60 @@
+html {
+    background: #121212;
+    font-size: 62.5%;
+    color: white;
+}
+
+.no-order {
+    display: none;
+    color: #FF0000;
+    padding: .5rem;
+}
+.order-finished-container {
+    display: none;
+    margin: 10vh auto;
+    padding: .5rem;
+    width: 60vw;
+    height: 78vh;
+    background-color: #323232;
+    border: 1px solid white;
+    font-size: 1.8rem;
+}
+.data-and-products {
+    margin-top: 2vh;
+}
+.completed-order-table-container {
+    margin-top: 1rem;
+}
+.completed-order-table {
+    width: 100%;
+    text-align: center;
+}
+.completed-order-table tbody {
+    display: block;
+    height: 45vh;
+    overflow-y: scroll;
+}
+.completed-order-table tr {
+    display: block;
+    width: 100%;
+}
+.completed-order-table td {
+    display: inline-block;
+    margin: 0 auto;
+    width: 50%;
+}
+.completed-order-table tbody::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    html {
+        font-size: 50%;
+    }
+    .completed-order-table tbody {
+        height: 41vh;
+    }
+    .completed-order-table tr {
+        height: 4rem;
+    }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='pt_br'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='resources/css/reset.css'>
+    <link rel='stylesheet' href='resources/css/finished.css'>
+    <title>Pedido concluído!</title>
+</head>
+<body>
+    <div class='no-order'>
+        Não foi possível obter os detalhes da compra. Tente novamente a partir da página principal.
+    </div>
+
+    <div class='order-finished-container'>
+        <!--Dados a serem inseridos por JS para completar a ficha-->
+        <p>O seu pedido foi concluído com sucesso!</p>
+        <p>Confira os detalhes da compra abaixo.</p>
+
+        <div class='data-and-products'>
+            <p id='user-name'>Nome: NaN</p>
+            <p id='user-city'>Cidade: NaN</p>
+            <p id='user-district'>Bairro: NaN</p>
+            <p id='user-road'>Rua: NaN</p>
+            <p id='user-number'>Número: NaN</p>
+            <p id='delivery-estimate'>Dias úteis até a entrega: NaN</p>
+            <div class='completed-order-table-container'>
+                <table class='completed-order-table'>
+                    <thead></thead>
+                    <tbody>
+                        <!--Adicionando produtos com JS-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src='./resources/js/jquery-3.5.1.min.js'></script> <!--Utilizando jQuery-->
+    <script src='./resources/js/script-completed.js'></script>
+</body>
